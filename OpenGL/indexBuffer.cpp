@@ -2,7 +2,7 @@
 #include "renderer.h"
 
 
-indexBuffer::indexBuffer(const unsigned int* data, unsigned int count, int mode)
+indexBuffer::indexBuffer(unsigned int* data, unsigned int count, int mode)
     :m_Count(count)
 {
     ASSERT(sizeof(GLuint) == sizeof(unsigned int));
