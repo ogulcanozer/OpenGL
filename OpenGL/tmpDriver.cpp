@@ -112,8 +112,8 @@ int main(void)
         program.useShader();
         glm::mat4 rotationX = glm::rotate(glm::mat4(1.0f), glm::radians(rot_angleX), { 1.0f,0.0f,0.0f });
         glm::mat4 model = glm::translate(glm::mat4(1.0f), translation) * rotationX;
-        float camPosX = sin(rot_angleY) * radius;
-        float camPosZ = cos(rot_angleY) * radius;
+        float camPosX = cos(rot_angleY) * radius;
+        float camPosZ = sin(rot_angleY) * radius;
         glm::mat4 view = glm::lookAt(glm::vec3(camPosX, 0.0, camPosZ), translation, glm::vec3(0.0f, 1.0f, 0.0f));
         glm::mat4 mvp = projection * view * model;
         program.setUniformMat4f("mvp", mvp);
